@@ -1,0 +1,23 @@
+/* Paint The Acid — global styles */
+*{box-sizing:border-box}
+html,body{margin:0;background:#09090D;color:#F5F5F5}
+a{color:#F5F5F5;text-decoration:none}
+a:hover{color:#8CFF00}
+.tile img{transition:transform .35s ease}
+.tile:hover img{transform:scale(1.04)}
+.gthumb{position:relative}
+@keyframes heroIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-in{animation:heroIn .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-in-2{animation-delay:.15s}
+@media (prefers-reduced-motion:reduce){.hero-in{animation:none}}
+.gthumb::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.6);transition:opacity .3s ease;pointer-events:none}
+.tile:hover .gthumb::after,.tile:focus-visible .gthumb::after{opacity:0}
+.tile:hover{color:#8CFF00!important}
+.tile:focus-visible{outline:2px solid #8CFF00;outline-offset:6px;border-radius:10px}
+.faq summary{list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq .tri{transition:transform .2s ease}
+.faq details[open] .tri{transform:rotate(90deg)}
+.faq summary:hover .fq{color:#8CFF00}
+.faq summary:focus-visible{outline:2px solid #8CFF00;outline-offset:4px}
+button{font:inherit}
